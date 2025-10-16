@@ -1,0 +1,1 @@
+Excel Utility is a powerful Java-based library and set of Automation Anywhere commands designed to simplify Excel automation. It provides robust functionality for manipulating Excel workbooks, including cell formatting, data type conversion, conditional formatting, and row highlighting — all programmatically via bot commands.
