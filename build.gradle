@@ -30,6 +30,7 @@ configure(allprojects){
     group "$groupName"
 
     sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     compileJava.options.encoding = 'UTF-8'
     compileTestJava.options.encoding = 'UTF-8'
@@ -44,7 +45,7 @@ configure(allprojects){
     packageJson{
         artifactName = project.name
         group = "$groupName"
-        author = ""
+        author = "Jyothish.S.L"
     }
 
     jar.dependsOn commandCodeGen
@@ -59,6 +60,7 @@ configure(allprojects){
         exclude 'META-INF/*.SF'
         exclude 'META-INF/*.DSA'
         exclude 'META-INF/*.RSA'
+        minimize()
     }
 
     dependencies {

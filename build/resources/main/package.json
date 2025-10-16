@@ -1,0 +1,172 @@
+{
+    "name": "Excel Utility",
+    "label": "[[label]]",
+    "description": "[[description]]",
+    "group": "com.automationanywhere",
+    "artifactName": "Excel Utility",
+    "packageVersion": "2.7.0-20251016-110207",
+    "codeVersion": "2.7.0-20251016-110207",
+    "author": "Jyothish.S.L",
+    "commands": [
+        {
+            "name": "ApplyBorders",
+            "label": "Apply Borders to Excel Range",
+            "description": "Applies borders to a specific cell range in the selected sheet",
+            "nodeLabel": "Apply borders in {{filePath}}",
+            "allowedAgentTargets": [
+                "WINDOWS"
+            ],
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.example.botcommands.excelutility.ApplyBordersCommand",
+            "icon": "icons/Microsoft_Office_Excel_Logo.png",
+            "returns": [
+                {
+                    "type": "UNDEFINED",
+                    "subtype": "ANY"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "filePath",
+                    "label": "Excel File Path",
+                    "type": "FILE"
+                },
+                {
+                    "name": "sheetName",
+                    "label": "Sheet Name",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "startRow",
+                    "label": "Start Row Number",
+                    "type": "NUMBER"
+                },
+                {
+                    "name": "endRow",
+                    "label": "End Row Number",
+                    "type": "NUMBER"
+                },
+                {
+                    "name": "startCol",
+                    "label": "Start Column Number",
+                    "type": "NUMBER"
+                },
+                {
+                    "name": "endCol",
+                    "label": "End Column Number",
+                    "type": "NUMBER"
+                }
+            ]
+        },
+        {
+            "name": "fixCellTypes",
+            "label": "Fix Excel Data Types",
+            "description": "Convert specific Excel columns to proper data types (Number, Date, etc.)",
+            "nodeLabel": "Fix data types in {{filePath}}",
+            "allowedAgentTargets": [
+                "WINDOWS"
+            ],
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.example.botcommands.excelutility.FixCellTypesCommandCommand",
+            "icon": "icons/Microsoft_Office_Excel_Logo.png",
+            "returns": [
+                {
+                    "type": "UNDEFINED",
+                    "subtype": "ANY"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "filePath",
+                    "label": "Excel File Path",
+                    "type": "FILE"
+                },
+                {
+                    "name": "sheetName",
+                    "label": "Sheet Name (leave blank for all sheets)",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "columnList",
+                    "label": "Columns to process (A,C,D or 1,3,4)",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "fixNumbers",
+                    "label": "Apply Number Conversion",
+                    "type": "BOOLEAN",
+                    "defaultValue": {
+                        "boolean": true,
+                        "type": "BOOLEAN"
+                    }
+                },
+                {
+                    "name": "fixDates",
+                    "label": "Apply Date Conversion",
+                    "type": "BOOLEAN",
+                    "defaultValue": {
+                        "boolean": true,
+                        "type": "BOOLEAN"
+                    }
+                },
+                {
+                    "name": "outputFile",
+                    "label": "Output File Path (leave blank to overwrite input)",
+                    "type": "FILE"
+                }
+            ]
+        },
+        {
+            "name": "HighlightExcelRow",
+            "label": "Highlight Excel Row",
+            "description": "Colors specified rows in an Excel file with the given HEX color",
+            "nodeLabel": "Highlight Excel rows in {{filePath}}",
+            "allowedAgentTargets": [
+                "WINDOWS"
+            ],
+            "minimumControlRoomVersion": "8750",
+            "minimumBotAgentVersion": "20.11",
+            "mainClass": "com.example.botcommands.excelutility.HighlightExcelRowCommand",
+            "icon": "icons/Microsoft_Office_Excel_Logo.png",
+            "returnType": "BOOLEAN",
+            "returnSubtype": "UNDEFINED",
+            "returnLabel": "Success",
+            "returnRequired": false,
+            "returnDescription": "Returns true if successful",
+            "attributes": [
+                {
+                    "name": "filePath",
+                    "label": "Excel File Path",
+                    "type": "FILE"
+                },
+                {
+                    "name": "rowNumbersStr",
+                    "label": "Row Numbers (comma-separated, e.g., 2,5,7)",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "startColumnStr",
+                    "label": "Start Column Number (e.g., 1)",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "columnCountStr",
+                    "label": "Column Count (e.g., 5)",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "colorHex",
+                    "label": "Color (HEX format, e.g., #90EE90)",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "sheetName",
+                    "label": "Sheet Name (optional)",
+                    "type": "TEXT"
+                }
+            ]
+        }
+    ]
+}
