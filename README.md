@@ -1,4 +1,4 @@
-# ![Excel Utility Banner](https://www.theproche.com/wp-content/uploads/2018/09/Automation-Anywhere-Logo.png)
+# ![Excel Utility Banner](https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Automation_Anywhere_Logo.svg/250px-Automation_Anywhere_Logo.svg.png)
 
 # Excel Utility
 
